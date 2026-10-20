@@ -1,0 +1,27 @@
+.section {
+  padding: var(--space-section) var(--gutter);
+  text-align: center;
+}
+
+/* Same width as two card columns */
+.about p, .intro {
+  max-width: calc((100% - 2 * var(--space-block)) / 3 * 2 + var(--space-block));
+  margin: 0 auto var(--space-text) auto;
+  text-align: left;
+  font-size: var(--text-lead);
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+.intro {
+  margin-bottom: var(--space-block);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about p, .intro {
+    max-width: none;
+  }
+}

@@ -1,0 +1,6 @@
+# Real email sending: replaces the Mailpit configuration with the one from .msmtprc.
+# Copy this file to docker-compose.override.yaml: docker compose loads it automatically.
+services:
+  http:
+    volumes:
+      - ./.msmtprc:/etc/msmtprc:ro

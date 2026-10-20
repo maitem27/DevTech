@@ -1,0 +1,122 @@
+header {
+  background: var(--onyx);
+  padding: 10px var(--gutter);
+  position: fixed;
+  width: calc(100% - 2 * var(--gutter));
+  z-index: 1000;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+header .logo {
+  display: inline-block;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+header .logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+header .nav-links {
+  margin-left: auto;
+}
+
+header .nav-links li {
+  display: inline-block;
+  margin: 0 0 0 20px;
+}
+
+header .nav-links a {
+  position: relative;
+  padding-bottom: 4px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+header .nav-links a:hover {
+  color: var(--school-bus-yellow);
+}
+
+header .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--school-bus-yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+header .nav-links a:hover::after,
+header .nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--onyx);
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+  }
+
+  header .nav-links li {
+    display: block;
+    margin: 20px;
+  }
+
+  .nav-links.nav-active {
+    transform: translateX(0);
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .burger span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .burger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger.toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}

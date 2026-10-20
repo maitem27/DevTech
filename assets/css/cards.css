@@ -1,0 +1,71 @@
+.service-cards, .team-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-block);
+}
+
+.card {
+  text-align: left;
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &:hover img {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(49, 54, 56, 0.15);
+  }
+}
+
+.team-cards .card img {
+  aspect-ratio: 4 / 5;
+  object-position: center top;
+}
+
+.card-content {
+  padding-top: 24px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-bottom: 16px;
+    background: var(--sky-blue);
+  }
+
+  p.card-intro {
+    margin-bottom: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    color: var(--air-force-blue-dark);
+  }
+
+  p {
+    font-size: var(--text-body);
+    color: color-mix(in oklab, var(--onyx), white 15%);
+  }
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Responsive: one column, as wide as the form, instead of 2 cards + 1 orphan */
+@media (max-width: 900px) {
+  .service-cards, .team-cards {
+    grid-template-columns: 1fr;
+    max-width: var(--width-narrow);
+    margin: 0 auto;
+  }
+}

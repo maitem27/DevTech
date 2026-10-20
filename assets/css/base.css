@@ -1,0 +1,74 @@
+:root {
+  --school-bus-yellow: #fddb00;
+  --white: #ffffff;
+  --air-force-blue: #568ea3;
+  --sky-blue: #68c3d4;
+  --onyx: #313638;
+  --air-force-blue-dark: color-mix(in oklab, var(--air-force-blue), black 25%);
+  --font-family: 'Open Sans', sans-serif;
+  --font-family-heading: 'Space Grotesk', sans-serif;
+  --space-section: 100px;
+  --space-block: 40px;
+  --space-text: 20px;
+  --gutter: 20px;
+  --width-narrow: 500px;
+  --text-h2: 3.5rem;
+  --text-h3: 2rem;
+  --text-lead: 1.25rem;
+  --text-body: 1.125rem;
+  --text-ui: 1rem;
+  --text-small: 0.875rem;
+}
+
+/** General elements and typography **/
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--onyx);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+}
+
+h1 {
+  font-size: clamp(4.5rem, 15vw, 12rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 700;
+  margin-bottom: var(--space-block);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--sky-blue), white 50%);
+  text-decoration-thickness: 0.35em;
+  text-underline-offset: -0.2em;
+  text-decoration-skip-ink: none;
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+strong {
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --space-section: 60px;
+    --text-h2: 2.5rem;
+    --text-h3: 1.5rem;
+    --text-lead: 1.125rem;
+    --text-body: 1rem;
+  }
+}

@@ -1,0 +1,17 @@
+services:
+  http:
+    build:
+      context: .
+    ports:
+      - 127.0.0.1:9000:80
+    volumes:
+      - ./:/var/www/html:ro
+    environment:
+      CONTACT_TO: ${CONTACT_TO:-contact@web2risk.test}
+      CONTACT_FROM: ${CONTACT_FROM:-noreply@web2risk.test}
+    depends_on:
+      - mailpit
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - 127.0.0.1:8025:8025

@@ -1,0 +1,11 @@
+# SMTP server configuration for msmtp. Copy it to .msmtprc and replace values
+account default
+host smtp.gmail.com
+port 587
+tls on
+tls_starttls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+auth on
+user your.address@gmail.com
+password your-password
+from your.address@gmail.com

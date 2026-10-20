@@ -1,0 +1,12 @@
+# Secrets: never in an image
+.env
+.msmtprc
+docker-compose.override.yaml
+
+# Not needed to run the site
+.git
+.github
+*.example
+*.md
+Dockerfile
+docker-compose*.yaml
